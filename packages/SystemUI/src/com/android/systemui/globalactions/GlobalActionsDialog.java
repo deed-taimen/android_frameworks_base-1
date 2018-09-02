@@ -425,12 +425,6 @@ class GlobalActionsDialog implements DialogInterface.OnDismissListener,
                 mItems.add(new RestartDownloadAction());
             } else if (GLOBAL_ACTION_KEY_SCREENSHOT.equals(actionKey)) {
                 mItems.add(new ScreenshotAction());
-            } else if (GLOBAL_ACTION_KEY_LOGOUT.equals(actionKey)) {
-                if (mDevicePolicyManager.isLogoutEnabled()
-                        && getCurrentUser().id != UserHandle.USER_SYSTEM) {
-                    mItems.add(new LogoutAction());
-                    mHasLogoutButton = true;
-                }
             } else {
                 Log.e(TAG, "Invalid global action key " + actionKey);
             }
